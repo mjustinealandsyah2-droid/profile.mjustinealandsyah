@@ -1,1 +1,1111 @@
-# profile.mjustinealandsyah
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | M.Justine Alandsya</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: #fff;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 8, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #555;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* HOME */
+        .home {
+            min-height: 100vh;
+            padding: 130px 8% 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-container {
+            max-width: 1100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .home-text {
+            max-width: 600px;
+            animation: masuk 1s ease;
+        }
+
+        .hello {
+            color: #666;
+            font-size: 14px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .home-text h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .home-text h1 span {
+            color: #555;
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-size: 19px;
+            margin-bottom: 20px;
+        }
+
+        .home-description {
+            color: #888;
+            line-height: 1.9;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 23px;
+            color: white;
+            border: 1px solid #333;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: black;
+            transform: translateY(-3px);
+        }
+
+        /* FOTO */
+        .photo-area {
+            width: 330px;
+            height: 330px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: masuk 1.3s ease;
+        }
+
+        .photo {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #333;
+            box-shadow: 0 0 0 10px #0e0e0e;
+            animation: melayang 4s ease-in-out infinite;
+        }
+
+        /* OBJEK */
+        .object {
+            position: absolute;
+            padding: 10px 14px;
+            background: #121212;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #aaa;
+            font-size: 14px;
+            z-index: 5;
+            box-shadow: 0 8px 25px rgba(0,0,0,.5);
+        }
+
+        .object1 {
+            top: 20px;
+            left: 0;
+            animation: objek 3s ease-in-out infinite;
+        }
+
+        .object2 {
+            top: 125px;
+            right: -5px;
+            animation: objek 4s ease-in-out infinite;
+        }
+
+        .object3 {
+            bottom: 20px;
+            left: 20px;
+            animation: objek 3.5s ease-in-out infinite;
+        }
+
+        /* SECTION */
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 100px 8%;
+        }
+
+        .label {
+            color: #555;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 38px;
+            margin-bottom: 35px;
+        }
+
+        .title span {
+            color: #555;
+        }
+
+        /* ABOUT */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .about-text {
+            color: #888;
+            line-height: 1.9;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        .info-box {
+            background: #101010;
+            border: 1px solid #222;
+            border-radius: 14px;
+            padding: 25px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 14px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #666;
+        }
+
+        .info-value {
+            color: #ddd;
+            text-align: right;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #101010;
+            border: 1px solid #222;
+            border-radius: 14px;
+            padding: 30px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #444;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #181818;
+            border: 1px solid #2b2b2b;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px 50px;
+        }
+
+        .skill {
+            margin-bottom: 10px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-name {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .percent {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .bar {
+            width: 100%;
+            height: 5px;
+            background: #1c1c1c;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #777;
+            animation: progress 1.5s ease;
+        }
+
+        .html {
+            width: 75%;
+        }
+
+        .css {
+            width: 70%;
+        }
+
+        .data {
+            width: 65%;
+        }
+
+        .analysis {
+            width: 70%;
+        }
+
+        /* JOURNEY */
+        .timeline {
+            border-left: 1px solid #333;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            background: #777;
+            border-radius: 50%;
+            left: -35px;
+            top: 8px;
+        }
+
+        .timeline-year {
+            color: #555;
+            font-size: 13px;
+        }
+
+        .timeline-item h3 {
+            margin: 5px 0 8px;
+        }
+
+        .timeline-item p {
+            color: #777;
+        }
+
+        /* HOBBY */
+        .hobby-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .hobby {
+            background: #101010;
+            border: 1px solid #222;
+            border-radius: 14px;
+            padding: 35px;
+            transition: .3s;
+        }
+
+        .hobby:hover {
+            transform: translateY(-5px);
+            border-color: #444;
+        }
+
+        .hobby-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hobby p {
+            color: #777;
+        }
+
+        /* DREAM */
+        .dream {
+            background: #101010;
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .dream-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .dream h2 {
+            margin-bottom: 15px;
+        }
+
+        .dream p {
+            max-width: 700px;
+            margin: auto;
+            color: #777;
+            line-height: 1.9;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-text {
+            max-width: 600px;
+            margin: auto;
+            color: #777;
+        }
+
+        .instagram {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 28px;
+            color: white;
+            border: 1px solid #333;
+            border-radius: 8px;
+            transition: .3s;
+        }
+
+        .instagram:hover {
+            background: white;
+            color: black;
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* ANIMASI */
+        @keyframes masuk {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes melayang {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes objek {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes progress {
+            from {
+                width: 0;
+            }
+        }
+
+        /* HP */
+        @media (max-width: 800px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .home {
+                padding: 120px 6% 70px;
+            }
+
+            .home-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .home-text h1 {
+                font-size: 42px;
+            }
+
+            .home-description {
+                margin: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .photo-area {
+                width: 280px;
+                height: 280px;
+            }
+
+            .photo {
+                width: 215px;
+                height: 215px;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+
+            .about-container,
+            .skills,
+            .hobby-box {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .dream {
+                padding: 35px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            MJ<span>.</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+    <section class="home" id="home">
+
+        <div class="home-container">
+
+            <div class="home-text">
+
+                <p class="hello">
+                    HELLO, I'M
+                </p>
+
+                <h1>
+                M.Justine <span>Alandsyah</span>
+                </h1>
+
+                <p class="subtitle">
+                    RPL Student • Data Analyst Enthusiast
+                </p>
+
+                <p class="home-description">
+                    Halo! Saya Justine Alandsya, seorang siswa
+                    Rekayasa Perangkat Lunak yang tertarik dengan
+                    teknologi, data, dan pemrograman.
+
+                    Saya senang mempelajari hal-hal baru,
+                    mencoba membuat website, serta mengembangkan
+                    kemampuan di bidang teknologi.
+                </p>
+
+                <div class="buttons">
+                    <a href="#about" class="btn">
+                        Tentang Saya
+                    </a>
+
+                    <a href="#contact" class="btn">
+                        Instagram
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- FOTO -->
+            <div class="photo-area">
+
+                <div class="object object1">
+                    &lt;/&gt;
+                </div>
+
+                <div class="object object2">
+                    DATA
+                </div>
+
+                <div class="object object3">
+                    ⚽
+                </div>
+
+                
+                
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <p class="label">
+            PROFILE
+        </p>
+
+        <h2 class="title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+                    Halo! Saya M.Justine Alandsyah.
+                    Saya merupakan siswa jurusan
+                    Rekayasa Perangkat Lunak atau RPL.
+                </p>
+
+                <p>
+                    Saya tertarik dengan dunia teknologi
+                    karena teknologi terus berkembang dan
+                    memiliki banyak hal menarik untuk dipelajari.
+                </p>
+
+                <p>
+                    Salah satu bidang yang saya minati adalah
+                    Data Analyst. Saya tertarik mempelajari
+                    bagaimana data dapat diolah, dianalisis,
+                    dan digunakan untuk mendapatkan informasi.
+                </p>
+
+                <p>
+                    Selain belajar teknologi, saya juga suka
+                    bermain bola. Bermain bola menjadi salah
+                    satu kegiatan yang saya lakukan ketika
+                    memiliki waktu luang.
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-row">
+                    <span class="info-label">Nama</span>
+                    <span class="info-value">Justine Alandsya</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Jurusan</span>
+                    <span class="info-value">RPL</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Keahlian</span>
+                    <span class="info-value">Data Analyst</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Hobi</span>
+                    <span class="info-value">Bermain Bola</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Cita-cita</span>
+                    <span class="info-value">Programmer</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTEREST -->
+    <section>
+
+        <p class="label">
+            WHAT I LIKE
+        </p>
+
+        <h2 class="title">
+            My <span>Interests</span>
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">
+                    📊
+                </div>
+
+                <h3>
+                    Data Analyst
+                </h3>
+
+                <p>
+                    Saya tertarik dengan pengolahan,
+                    analisis, dan visualisasi data untuk
+                    mendapatkan informasi yang bermanfaat.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    💻
+                </div>
+
+                <h3>
+                    Programming
+                </h3>
+
+                <p>
+                    Saya ingin terus belajar programming
+                    dan memahami cara membuat website
+                    serta aplikasi.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    ⚽
+                </div>
+
+                <h3>
+                    Football
+                </h3>
+
+                <p>
+                    Bermain bola merupakan kegiatan yang
+                    saya sukai untuk mengisi waktu luang
+                    dan bermain bersama teman.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <p class="label">
+            MY ABILITIES
+        </p>
+
+        <h2 class="title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">
+
+                <div class="skill-header">
+                    <span class="skill-name">HTML</span>
+                    <span class="percent">75%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress html"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+                    <span class="skill-name">CSS</span>
+                    <span class="percent">70%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress css"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+                    <span class="skill-name">Data Processing</span>
+                    <span class="percent">65%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress data"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-header">
+                    <span class="skill-name">Data Analysis</span>
+                    <span class="percent">70%</span>
+                </div>
+
+                <div class="bar">
+                    <div class="progress analysis"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOURNEY -->
+    <section id="journey">
+
+        <p class="label">
+            MY JOURNEY
+        </p>
+
+        <h2 class="title">
+            Learning <span>Journey</span>
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <p class="timeline-year">
+                    AWAL
+                </p>
+
+                <h3>
+                    Mengenal Teknologi
+                </h3>
+
+                <p>
+                    Mulai tertarik dengan komputer,
+                    teknologi, dan dunia digital.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <p class="timeline-year">
+                    RPL
+                </p>
+
+                <h3>
+                    Belajar RPL
+                </h3>
+
+                <p>
+                    Mulai mempelajari dasar pemrograman,
+                    HTML, CSS, dan pembuatan website.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <p class="timeline-year">
+                    SEKARANG
+                </p>
+
+                <h3>
+                    Belajar Data
+                </h3>
+
+                <p>
+                    Mulai mempelajari pengolahan dan
+                    analisis data.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <p class="timeline-year">
+                    MASA DEPAN
+                </p>
+
+                <h3>
+                    Menjadi Programmer
+                </h3>
+
+                <p>
+                    Terus belajar programming dan
+                    mengembangkan kemampuan untuk
+                    mencapai cita-cita.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOBBY -->
+    <section>
+
+        <p class="label">
+            MY ACTIVITY
+        </p>
+
+        <h2 class="title">
+            My <span>Hobby</span>
+        </h2>
+
+        <div class="hobby-box">
+
+            <div class="hobby">
+
+                <div class="hobby-icon">
+                    ⚽
+                </div>
+
+                <h3>
+                    Bermain Bola
+                </h3>
+
+                <p>
+                    Bermain bola adalah salah satu kegiatan
+                    yang saya sukai. Saya biasanya bermain
+                    bersama teman ketika waktu luang.
+                </p>
+
+            </div>
+
+
+            <div class="hobby">
+
+                <div class="hobby-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Belajar Teknologi
+                </h3>
+
+                <p>
+                    Saya juga suka belajar hal-hal baru
+                    yang berhubungan dengan komputer,
+                    website, data, dan pemrograman.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DREAM -->
+    <section>
+
+        <div class="dream">
+
+            <div class="dream-icon">
+                🎯
+            </div>
+
+            <h2>
+                My Dream
+            </h2>
+
+            <p>
+                Cita-cita saya adalah menjadi seorang
+                programmer. Saya ingin memiliki kemampuan
+                untuk membuat website, aplikasi, dan
+                berbagai solusi digital.
+
+                Untuk mencapai cita-cita tersebut,
+                saya akan terus belajar, mencoba hal-hal
+                baru, dan meningkatkan kemampuan saya
+                di bidang teknologi.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <p class="label">
+            CONTACT
+        </p>
+
+        <h2 class="title">
+            Let's <span>Connect</span>
+        </h2>
+
+        <p class="contact-text">
+            Terima kasih sudah mengunjungi website
+            perkenalan saya. Kamu bisa mengenal saya
+            lebih jauh melalui Instagram.
+        </p>
+
+        <a
+            href="https://instagram.com/mjastin23"
+            target="_blank"
+            class="instagram"
+        >
+            Instagram • @mjastin23
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Justine Alandsya
+        </p>
+
+        <p>
+            RPL Student • Data Analyst Enthusiast • Future Programmer
+        </p>
+
+    </footer>
+
+</body>
+</html>
